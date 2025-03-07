@@ -207,7 +207,7 @@ class UserController extends Controller
         {
             $categories = Category::all();
         $Products = Products::find($id); 
-
+            
         return view("dashboards.user.productedit")->with('Products',$Products)->with('categories',$categories);
         }
         

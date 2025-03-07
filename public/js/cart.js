@@ -70,7 +70,7 @@ $(document).ready(function () {
 
     $('.book-now-btn').click(function (e) {
         
-        e.preventDefault();
+        e.preventDefault()
 
         $.ajaxSetup({
             headers: {

@@ -35,7 +35,8 @@ class CreateProductsTable extends Migration
             $table->string('featured')->nullable();
             $table->unsignedBigInteger('owner_id')->nullable();
             $table->integer('quantity')->nullable();
-
+            $table->integer('delivery_charges')->nullable();
+            $table->string('additional_info')->nullable();
             // Foreign key constraint
             $table->foreignId('category_id')->constrained('category')->onDelete('cascade');
 

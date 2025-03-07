@@ -91,7 +91,12 @@
                                   <input type="number" class="form-control" name="quantity" min="1"  value="1" placeholder="Quantity">
                               </div>
                           </div> 
-
+                          <div class="col-md-6"   >
+                              <div class="form-group">
+                                  <label> Priority</label>
+                                  <input type="number" name="priority" min="0" class="form-control" required placeholder="Priority">
+                              </div>
+                          </div>
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Small Description</label>
@@ -106,6 +111,7 @@
                                   <input type="text" name="price" min="0" class="form-control">
                               </div>
                           </div>
+                          
                           <div class="col-md-6"   >
                               <div class="form-group">
                                   <label> Total Cost</label>

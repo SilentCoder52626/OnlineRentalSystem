@@ -13,7 +13,7 @@ class CategoryController extends Controller
     public function index()
     {
         // Get All locations order by id decending
-        $categories = Category::orderBy('id','desc')->paginate(5);
+        $categories = Category::orderBy('id', 'desc')->paginate(5);
         return view('dashboards.admin.Category.index')->with('categories', $categories);
     }
 
@@ -27,7 +27,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-          'name'  => ['required', 'max:255']
+            'name'  => ['required', 'max:255']
         ]);
 
         $data = $request->only('name');
@@ -38,7 +38,7 @@ class CategoryController extends Controller
 
         // Flasher::addSuccess('Category Added');  // Flasher
 
-        return redirect()->route('admin-category.index')->with('status','Category Data Added Successfully'); // Redirect with success message
+        return redirect()->route('admin-category.index')->with('status', 'Category Data Added Successfully'); // Redirect with success message
     }
 
 
@@ -51,8 +51,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         // Get location by id
-       $category = Category::findorFail($id);
-       return view('dashboards.admin.Category.edit')->with('category', $category);
+        $category = Category::findorFail($id);
+        return view('dashboards.admin.Category.edit')->with('category', $category);
     }
 
 
@@ -81,15 +81,25 @@ class CategoryController extends Controller
 
     public function deleteCategory(Request $request, $id)
     {
-        $Category=Category::find($id);
- 
-        $Category->status = 2;
+        $Category = Category::find($id);
+
+        $Category->status = 0;
 
         //Status 1 is active user
-        // Status 2 is the user present in the recycle bin (inactive_User)
+        // Status 0 is inactive user
         $Category->update();
-        return redirect()->back()->with('status', 'Category Moved to Recycle Bin');
+        return redirect()->back()->with('status', 'Category deactivated successfully');
+    }
 
-   
+
+    public function activateCategory(Request $request, $id)
+    {
+        $Category = Category::find($id);
+
+        $Category->status = 1;
+        //Status 1 is active user
+        // Status 0 is inactive user
+        $Category->update();
+        return redirect()->back()->with('status', 'Category activated successfully');
     }
 }

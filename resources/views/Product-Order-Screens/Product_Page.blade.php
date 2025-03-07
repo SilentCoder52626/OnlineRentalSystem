@@ -23,7 +23,7 @@
 
 <script>
     $(document).ready(function() {
-        $("#main_image, .xzoom-gallery").xzoom({fadeIn:true;fadeOut:true;position:inside;});
+        $("#main_image, .xzoom-gallery").xzoom({fadeIn:true,fadeOut:true});
         $('#daterange').daterangepicker({
                 opens: 'left' // Adjust the calendar to open on the left of the input
             });
@@ -78,7 +78,7 @@
                           @csrf
 
                               <h3 style="font-weight:bold;">{{$Product->name}}</h3>
-                              <p>Posted by {{ $verified==true?'verified':'unverified' }} user</p>
+                              <p>Posted by {{ Auth()->user()->profile->verified=='1'?'verified':'unverified' }} user</p>
                             
                               <p>{{$Product->description}}</p>
                               

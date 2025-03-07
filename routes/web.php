@@ -129,6 +129,8 @@ Route::group(['middleware'=>['auth','isAdmin']],function ()
     Route::get('/admin-category-edit/{id}','Admin\CategoryController@edit');
     Route::put('/admin-category-update/{id}','Admin\CategoryController@update');
     Route::get('admin-category-delete/{id}','Admin\CategoryController@deleteCategory');
+    Route::get('admin-category-activate/{id}','Admin\CategoryController@activateCategory');
+
 
     Route::get('/admin-product-edit/{id}','Admin\LinksController@ShowEditingScreen');
     Route::put('/admin-product-update/{id}','Admin\ProductController@update');    

@@ -16,21 +16,24 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('Customer_Emailid');
-            $table->string('Delivery_Address');
-            $table->string('Order_Details');
-            $table->float('Coupen_Code')->nullable();
-            $table->double('Amount',8,2);
+            $table->text('Delivery_Address');
+            $table->text('Order_Details')->nullable();
+            $table->string('Coupen_Code')->nullable();
+            $table->decimal('Amount', 10, 2);
+            $table->decimal('payment', 10, 2);
+            $table->decimal('deposite_Amount', 10, 2)->nullable();
+            $table->decimal('delivery_charge', 10, 2)->nullable();
+            $table->date('required_date')->nullable();
+            $table->unsignedBigInteger('product_id');
             $table->string('paymentmode');
-            $table->string('Shipping_Status')->default('pending');
-            $table->string('Delivery_Status')->default('pending');
-            $table->tinyInteger('Order_Cancel_Status')->default('0'); 
-            $table->string('Order_Cancelled_On')->nullable(); 
-            $table->string('p_status')->default('pending');
-            $table->string('p_status_Updated_By')->nullable();     
-            
-            
-            
+            $table->tinyInteger('payment_status')->default(0);
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->string('p_status')->nullable();
+            $table->unsignedBigInteger('p_status_Updated_By')->nullable();
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

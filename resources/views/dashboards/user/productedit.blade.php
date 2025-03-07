@@ -87,7 +87,18 @@
 
                               </div>
                           </div>
-
+                          <div class="col-md-6"   >
+                              <div class="form-group">
+                                  <label>Quantity</label>
+                                  <input type="number" name="quantity" min="0" class="form-control" value="{{$Products->quantity}}">
+                              </div>
+                          </div>
+                          <div class="col-md-6"   >
+                              <div class="form-group">
+                                  <label> Priority</label>
+                                  <input type="number" name="priority" min="0" class="form-control" required value="{{$Products->priority}}" >
+                              </div>
+                          </div>
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Small Description</label>
@@ -107,12 +118,6 @@
                               <div class="form-group">
                                   <label> Price</label>
                                   <input type="text" name="price" min="0" class="form-control" value="{{$Products->price}}">
-                              </div>
-                          </div>
-                          <div class="col-md-6"   >
-                              <div class="form-group">
-                                  <label>Quantity</label>
-                                  <input type="number" name="quantity" min="0" class="form-control" value="{{$Products->quantity}}">
                               </div>
                           </div>
   

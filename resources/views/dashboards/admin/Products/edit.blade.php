@@ -87,7 +87,12 @@
                               </div>
                           </div>
                           
-
+                          <div class="col-md-6"   >
+                              <div class="form-group">
+                                  <label> Priority</label>
+                                  <input type="number" name="priority" min="0" class="form-control" value="{{$Products->priority}}">
+                              </div>
+                          </div>
                           <div class="col-md-12">
                               <div class="form-group">
                                   <label>Small Description</label>
@@ -109,7 +114,7 @@
                                 Note: If you check mark then, the product will be displayed on home page
                             </p>
                           </div>
-
+                          
 
 
                           <div class="col-md-6"   >
@@ -216,7 +221,7 @@
                                <div class="col-md-6">
                               <div class="form-group">
                                   <label> Delivery Charges</label>
-                                  <input type="number" class="form-control" name="delivery_charges"  required min="1" placeholder="Delivery Charges " value="{{$Products->delivery_charges}}">
+                                  <input type="number" class="form-control" name="delivery_charges"  min="1" placeholder="Delivery Charges " value="{{$Products->delivery_charges}}">
                               </div>
                           </div>
                             
