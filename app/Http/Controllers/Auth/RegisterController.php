@@ -31,20 +31,16 @@ class RegisterController extends Controller
      *
      * @var string
      */
-        public function redirectTo()
+    public function redirectTo()
     {
-         $count=session()->get('cart');
-         if($count)
-         {
-               return 'checkout';
-         }
-         else
-         {
-             return '/';
-         }
-        
+        $count = session()->get('cart');
+        if ($count) {
+            return 'checkout';
+        } else {
+            return '/';
+        }
     }
-  //  protected $redirectTo = '/home';
+    //  protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -87,43 +83,37 @@ class RegisterController extends Controller
         $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'mnumber' => $data['mnumber'],
             'password' => Hash::make($data['password']),
         ]);
 
-        if($user){
-            $name='Online Rental';
-            $email='milanawal123@gmail.com';
-            $subject='Test';
-            $message='Hello';
-            $emailto=$data['email'];
-            $recievername=$name;
-            /* Mail Starts Here */
-            $welcomemessage='Hello';
-            $emailbody=$data['name'];
-            $verificationUrl = $this->generateVerificationUrl($user);
-            $emailcontent=array(
-                'WelcomeMessage'=>$welcomemessage,
-                'emailBody'=>$emailbody,
-                'verificationUrl'=>$verificationUrl
-            );
-            
+        if ($user) {
+            $subject = 'Email Verification';
+            $emailto = "commonkhadka@gmail.com";
+            $receiverName = "Kaman Khadka";
 
-            Mail::send(array('html' => 'emails.emailVerification'), $emailcontent, function($message) use
-                ($emailto, $subject,$recievername)
-                {
-                    $message->to($emailto, $recievername)->subject
-                    ('Hello Admin New Mail From your Client/Customer:'.$subject);
-                    $message->from('admin@onlinerental.com','OnlineRental');
-                    
-                });
-                            
+            /* Mail Starts Here */
+            $welcomemessage = 'Hello';
+            $emailbody = $data['name']; 
+            $verificationUrl = $this->generateVerificationUrl($user);
+
+            $emailcontent = [
+                'WelcomeMessage' => $welcomemessage,
+                'emailBody' => $emailbody,
+                'verificationUrl' => $verificationUrl,
+            ];
+
+            // Send the email
+            Mail::send('emails.emailVerification', $emailcontent, function ($message) use ($emailto, $subject, $receiverName) {
+                $message->to($emailto, $receiverName)
+                    ->subject('Hello Admin New Mail From your Client/Customer: ' . $subject);
+                $message->from('admin@onlinerental.com', 'OnlineRental');
+            });
 
             return $user;
         }
-
-
     }
-    
+
     protected function generateVerificationUrl($user)
     {
         return URL::temporarySignedRoute(

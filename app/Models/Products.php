@@ -25,11 +25,14 @@ class Products extends Model
         'status',
         'category_id',
         'cost',
-        'payment_status'
+        'payment_status',
+        'featured',
+        'owner_id',
+        'quantity',
     ];
 
     function category(){
 
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 }
