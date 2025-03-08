@@ -29,6 +29,12 @@ class CreateOrdersTable extends Migration
             $table->tinyInteger('payment_status')->default(0);
             $table->date('start_date');
             $table->date('end_date');
+
+            $table->string('Shipping_Status')->default('pending');
+            $table->string('Delivery_Status')->default('pending');
+            $table->tinyInteger('Order_Cancel_Status')->default('0'); 
+            $table->string('Order_Cancelled_On')->nullable(); 
+
             $table->string('p_status')->nullable();
             $table->unsignedBigInteger('p_status_Updated_By')->nullable();
             $table->timestamps();

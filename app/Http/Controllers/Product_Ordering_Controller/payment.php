@@ -81,7 +81,6 @@ namespace App\Http\Controllers\Product_Ordering_Controller;
                             $User=User::where('email','=',$email)->first();
                             $loginid=$email;
                             $name=$User->name;
-                            //You Paid amount of  '.$amount.' INR  for the following Order
         	                $welcomemessage='Hello '.$name.'';
         	                $emailbody='<p>Your Payment '.$amount.' towards Order '.$O_id. 'is Successfully Paid .
 Your Order is Confirmed. Estimated Delivery 3-5 Working days</p>

@@ -110,7 +110,6 @@ class ProductController extends Controller
         $products->priority= $request->input('priority');
         $products->category_id= $request->input('category_id');
 
-
          $products->title= $request->input('meta_title');
         $products->meta_description= $request->input('meta_description');
         $products->keywords= $request->input('meta_keyword');

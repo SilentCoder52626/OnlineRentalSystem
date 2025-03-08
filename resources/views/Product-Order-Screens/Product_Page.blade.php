@@ -40,7 +40,7 @@
     
   <div class="product_data px-3 py-5  "  >
 
-      <div class="row  d-flex align-items-center ">
+      <div class="row  d-flex  ">
           <div class="col-md-4  animated fadeInRight fast" style="width: 100%;">
                   <!-- Main image, on which xzoom will be applied -->
                   <img class="xzoom img-fluid" id="main_image"  src="{{asset('Uploads/Products/'.$Product->image1)}}" xoriginal="{{asset('Uploads/Products/'.$Product->image1)}}" style="width:70%">

@@ -294,6 +294,10 @@ class UserController extends Controller
             $products->rating= $request->input('rating');
             $products->priority= $request->input('priority');
             $products->category_id= $request->input('category_id');
+            $products->cost= $request->input('cost');
+            $products->quantity= $request->input('quantity');
+
+
     
     
              $products->title= $request->input('meta_title');

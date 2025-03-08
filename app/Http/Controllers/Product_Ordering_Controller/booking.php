@@ -183,6 +183,7 @@ namespace App\Http\Controllers\Product_Ordering_Controller;
                               
 
                     // return view('Product-Order-Screens.payment')->with('total',$Amount)->with('tuid',$transaction_id);
+                    return redirect(url('payment-success',$transaction_id))->with('success', 'Address updated successfully!');
 
                     return redirect(url('payment-confirm',$transaction_id))->with('success', 'Address updated successfully!');
 
