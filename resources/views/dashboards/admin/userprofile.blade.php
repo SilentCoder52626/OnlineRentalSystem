@@ -58,10 +58,13 @@
                                 </div>
 
                                 <div class="col-md-4">
-
                                     <div class="form-group">
-                                        <label> Citizenship</label>
-                                        <input type="file" name="citizenship" class="form-control">
+                                        <label> Citizenship <i class="fa fa-link"></i></label> <br />
+                                        <!-- <input type="file" name="citizenship" class="form-control"> -->
+                                        <a title="View citizenship" href="{{asset('Uploads/profiles/'.$user->profile->citizenship)}}" target="_blank">
+                                            <img src="{{asset('Uploads/profiles/'.$user->profile->citizenship)}}" width="50px;"
+                                                alt="{{$user->profile->citizenship}}" />
+                                        </a>
                                     </div>
                                 </div>
 
