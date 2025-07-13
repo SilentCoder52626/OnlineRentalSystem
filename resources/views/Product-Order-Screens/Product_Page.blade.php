@@ -78,7 +78,7 @@
                           @csrf
 
                               <h3 style="font-weight:bold;">{{$Product->name}}</h3>
-                              <p>Posted by {{ Auth()->user()->profile->verified=='1'?'verified':'unverified' }} user</p>
+                              <p>Posted by {{ $Product->owner->profile->verified=='1'?'verified':'unverified' }} user</p>
                             
                               <p>{{$Product->description}}</p>
                               

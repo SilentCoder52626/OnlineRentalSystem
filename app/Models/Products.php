@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Products extends Model
@@ -34,5 +35,9 @@ class Products extends Model
     function category(){
 
         return $this->belongsTo(Category::class, 'category_id');
+    }
+    function owner(){
+
+        return $this->belongsTo(User::class, 'owner_id');
     }
 }
