@@ -39,7 +39,7 @@
             <img class="card-img-top" src="{{asset('assets/img/Khali-Digital-wallet-.jpg')}}" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Khalti</h5>
-                <button class="btn btn-primary" disable>Pay Via Khalti</button>
+                <button class="btn btn-primary" >Pay Via Khalti</button>
             </div>
         </div>
     </div>

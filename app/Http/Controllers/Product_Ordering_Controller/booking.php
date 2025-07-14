@@ -182,10 +182,10 @@ namespace App\Http\Controllers\Product_Ordering_Controller;
                     session()->flash('success', 'Session data  is Cleared');
                               
 
-                    // return view('Product-Order-Screens.payment')->with('total',$Amount)->with('tuid',$transaction_id);
-                    return redirect(url('payment-success',$transaction_id))->with('success', 'Address updated successfully!');
+                     return view('Product-Order-Screens.payment')->with('total',$Amount)->with('tuid',$transaction_id);
+                    // return redirect(url('payment-success',$transaction_id))->with('success', 'Address updated successfully!');
 
-                    return redirect(url('payment-confirm',$transaction_id))->with('success', 'Address updated successfully!');
+                    // return redirect(url('payment-confirm',$transaction_id))->with('success', 'Address updated successfully!');
 
                     // return redirect()->url("/payment-confirm",$transaction_id)->with('status','Order Placed Succesfully!');                  
                  

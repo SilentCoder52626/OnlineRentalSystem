@@ -392,6 +392,12 @@ class UserController extends Controller
 
 
         }
+         function paymentFailed(){
+           
+                Session::forget('cart');
+                return redirect("/Orders")->with('status','Order Placed Succesfully with Pending Payment!');  
+           
+        }
 
     
     

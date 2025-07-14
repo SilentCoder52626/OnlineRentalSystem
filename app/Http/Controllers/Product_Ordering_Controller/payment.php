@@ -61,7 +61,7 @@ namespace App\Http\Controllers\Product_Ordering_Controller;
                 $Delivery_Address=$Order->Delivery_Address;
              $p_method=$Order->paymentmode;
             $Amount=$Order->Amount;
-                if($status=="success" && $unmappedstatus=='captured')
+                if(($status=="success" || $status == "COMPLETE") && $unmappedstatus=='captured')
                 {
                        
                    

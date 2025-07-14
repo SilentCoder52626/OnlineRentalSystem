@@ -102,7 +102,6 @@
                                     </form>
                                         </td>
                                     </tr>
-                                    {{ $total +=$deposite+$details['delivery_charges'] }}
                                 @endforeach
                             </tbody>
                             </table>

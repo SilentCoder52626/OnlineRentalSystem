@@ -14,6 +14,7 @@ class Transaction extends Model
         'amount',
         'status',
         'created_at',
+        'transaction_code',
                    
         
         

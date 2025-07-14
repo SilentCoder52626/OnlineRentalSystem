@@ -88,6 +88,6 @@
 
 <script>
     $(document).ready(function() {
-       // $('#payment_form').submit();
+        $('#payment_form').submit();
     });
 </script>

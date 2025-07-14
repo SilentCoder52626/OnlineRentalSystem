@@ -59,6 +59,8 @@ Route::get('/Shop/{purl}', 'Product_Ordering_Controller\FrontEndController@index
 Route::get('/user/dashboard', 'UserController@index')->middleware('auth');
 
 Route::get('payment-success','UserController@paymentSuccess');
+Route::get('payment-failed','UserController@paymentFailed');
+
 
 
     Route::get('/dashboard', 'UserController@index')->middleware('auth');
