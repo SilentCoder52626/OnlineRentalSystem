@@ -46,7 +46,7 @@
               <div class="email">
               <i class="fas fa-envelope"></i>
                 <h4>Email:</h4>
-                <p>support@onlinerental.com</p>
+                <p>support@renthimalaya.com.np</p>
               </div>
 
               <div class="phone">

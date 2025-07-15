@@ -101,8 +101,8 @@ Your Order is Confirmed. Estimated Delivery 3-5 Working days</p>
         	                    ($loginid, $name,$O_id)
         	                    {
         	                        $message->to($loginid, $name)->subject
-        	                        ('Your Online Rental Order Payment '.$O_id.' is Successfully Paid');
-        	                        $message->from('codetalentum@btao.in','Online Rental System');
+        	                        ('Your Rent Himalaya Order Payment '.$O_id.' is Successfully Paid');
+        	                        $message->from('admin@renthimalaya.com.np','RentHimalaya');
         	                        
         	                    });
                         
@@ -138,9 +138,9 @@ Your Order is Confirmed. Estimated Delivery 3-5 Working days</p>
                             $loginid=$email;
                             $name=$User->name;
                       $welcomemessage='Hello '.$name.'';
-        	                $emailbody=' <p>Your Payment '.$amount.' towards Order '.$O_id. 'is failed. <br>
+        	                $emailbody=' <p>Your Payment '.$amount.' towards Order '.$O_id. 'has failed. <br>
         	                You Can Try Again by using the following link: <br>
-        	                <a href="https://www.onlinerental.com/proceed_to_Payment/'.$O_id.'">https://www.onlinerental.com/proceed_to_Payment/'.$O_id.'</a></p>
+        	                <a href="https://www.renthimalaya.com.np/proceed_to_Payment/'.$O_id.'">https://www.renthimalaya.com.np/proceed_to_Payment/'.$O_id.'</a></p>
         	                <h4>Order Details: </h4><p> Order No:'.$O_id.$Order_Details.'</p>
         	                 <p><strong>Delivery Address:</strong>
         	               '.$Delivery_Address.'</p>
@@ -157,8 +157,8 @@ Your Order is Confirmed. Estimated Delivery 3-5 Working days</p>
         	                    ($loginid, $name,$O_id)
         	                    {
         	                        $message->to($loginid, $name)->subject
-        	                        ('Your Online Rental Order '.$O_id.' Payment is Failed');
-        	                        $message->from('codetalentum@btao.in','Online Rental');
+        	                        ('Your Rent Himalaya Order '.$O_id.' Payment is Failed');
+        	                        $message->from('admin@renthimalaya.com.np','RentHimalaya');
         	                        
         	                    });
                     Session::forget('cart');

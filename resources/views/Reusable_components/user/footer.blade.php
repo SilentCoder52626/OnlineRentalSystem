@@ -9,9 +9,10 @@
 
       <!-- Grid column -->
       <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-        <h6 class="text-uppercase mb-4 font-weight-bold">Online Rental System</h6>
-        <p>Welcome to Online Rental System, your go-to online rental system. We connect people and businesses, making it easy to rent and list products. Enjoy a wide range of items, from electronics to furniture, all in one secure and user-friendly platform.</p>
-       
+        <h6 class="text-uppercase mb-4 font-weight-bold">Rent Himalaya</h6>
+        <p>Welcome to Rent Himalaya, your go-to online rental system. We connect people and businesses, making it easy to rent and list products. Enjoy a wide range of items, from electronics to furniture, all in one secure and user-friendly platform.</p>
+        <p>Our mission is to simplify the rental process, ensuring convenience and trust for both renters and listers. Whether you're looking to rent or list, Rent Himalaya is here to help you every step of the way.</p>
+        <p>Join us today and experience the future of online rentals!</p>
       </div>
 
       <hr class="w-100 clearfix d-md-none">
@@ -43,9 +44,9 @@
         <p>
           <i class="fas fa-home mr-3"></i>  Kathmandu, Nepal</p>
         <p>
-          <i class="fas fa-envelope mr-3"></i> support@onlinerental.com</p>
+          <i class="fas fa-envelope mr-3"></i> support@renthimalaya.com.np</p>
         <p>
-          <i class="fas fa-phone mr-3"></i> Online Rental : +977 9842*******</p>
+          <i class="fas fa-phone mr-3"></i> Rent Himalaya : +977 9842*******</p>
       </div>
       <!-- Grid column -->
 

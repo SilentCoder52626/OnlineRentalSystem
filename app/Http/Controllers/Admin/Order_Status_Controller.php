@@ -53,7 +53,7 @@ class Order_Status_Controller extends Controller
                             $name=$User->name;
                             
         	                $welcomemessage='Hello '.$name.'';
-        	                $emailbody='<p>Your Order has been Shipped. Your estimated delivery date is 3-5 working days. If you would like to view the status of your order or make any changes to it, please visit Your Orders on <a href="https://www.onlinerental.com">Onlinerental.com</a></p><br>
+        	                $emailbody='<p>Your Order has been Shipped. Your estimated delivery date is 3-5 working days. If you would like to view the status of your order or make any changes to it, please visit Your Orders on <a href="https://www.renthimalaya.com">renthimalaya.com</a></p><br>
         	                <h4>Order Details: </h4><p> Order No:'.$id.$Order_Details.'</p>
         	                 <p><strong>Delivery Address:</strong>
         	               '.$Delivery_Address.'</p>
@@ -70,9 +70,9 @@ class Order_Status_Controller extends Controller
         	                    ($loginid, $name,$id)
         	                    {
         	                        $message->to($loginid, $name)->subject
-        	                        (' Your online rental order '.$id.' is Shipped');
-        	                        $message->from('codetalentum@btao.in','OnlineRental');
-        	                        
+        	                        (' Your rent himalaya order '.$id.' is Shipped');
+        	                        $message->from('admin@renthimalaya.com.np','RentHimalaya');
+
         	                    });
            /* Email Alert Ends Here*/
         return redirect()->back()->with('status','Shipping Status Updated Succesfully');
@@ -83,7 +83,7 @@ class Order_Status_Controller extends Controller
      {
          $id=$request->input('Order_id') ;
         $Orders=Order::find($id);
-        date_default_timezone_set("Asia/Calcutta");   //India time (GMT+5:30)
+        date_default_timezone_set("Asia/Kathmandu");   //Nepal time (GMT+5:45)
          
         $Delivery_Status =  date('d-m-Y h:i:s');
         $Orders->Delivery_Status=$Delivery_Status;
@@ -118,8 +118,8 @@ class Order_Status_Controller extends Controller
         	                    ($loginid, $name,$id)
         	                    {
         	                        $message->to($loginid, $name)->subject
-        	                        ('Your Onlinerental.com order '.$id.' is Delivered');
-        	                        $message->from('admin@onlinerental.com','OnlineRental');
+        	                        ('Your RentHimalaya.com.np order '.$id.' is Delivered');
+        	                        $message->from('admin@renthimalaya.com.np','RentHimalaya');
         	                        
         	                    });
            /* Email Alert Ends Here*/
@@ -207,9 +207,8 @@ class Order_Status_Controller extends Controller
         	                    ($loginid, $name,$id)
         	                    {
         	                        $message->to($loginid, $name)->subject
-        	                        ('Your Onlinerental.com order '.$id.' is Cancelled');
-        	                        $message->from('admin@onlinerental.com','OnlineRental');
-        	                        
+        	                        ('Your renthimalaya.com.np order '.$id.' is Cancelled');
+        	                        $message->from('admin@renthimalaya.com.np','RentHimalaya');
         	                    });
            /* Email Alert Ends Here*/
         

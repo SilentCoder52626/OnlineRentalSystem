@@ -1,5 +1,5 @@
 @extends('layout')
-@section('title') Online Rental System @endsection
+@section('title') Rent Himalaya @endsection
 @section('keywords') Home,About,Contact,Car @endsection
 @section('description') Write some descripton about the webpage @endsection
 @section('content')

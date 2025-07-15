@@ -107,7 +107,7 @@ class RegisterController extends Controller
             Mail::send('emails.emailVerification', $emailcontent, function ($message) use ($emailto, $subject, $receiverName) {
                 $message->to($emailto, $receiverName)
                     ->subject('Hello Admin New Mail From your Client/Customer: ' . $subject);
-                $message->from('admin@onlinerental.com', 'OnlineRental');
+        	                        $message->from('admin@renthimalaya.com.np','RentHimalaya');
             });
 
             return $user;

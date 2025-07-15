@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'admin@onlinerental.com'),
-        'name' => env('MAIL_FROM_NAME', 'OnlineRental'),
+        'address' => env('MAIL_FROM_ADDRESS', 'admin@renthimalaya.com.np'),
+        'name' => env('MAIL_FROM_NAME', 'RentHimalaya'),
     ],
 
     /*

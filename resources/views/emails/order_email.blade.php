@@ -80,7 +80,7 @@
                             <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                 <tr>
                                     <td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;" width="75%">
-                                       &copy;  OnlineRental 2024<br/>
+                                       &copy;  RentHimalaya 2025<br/>
                                        <font color="#ffffff">For More Details please feel free to  <a href="{{url('Contact')}}" style="color: #ffffff;text-decoration:underline;">ContactUs</font></a> 
                                     </td>
                                     <td align="right" width="25%">

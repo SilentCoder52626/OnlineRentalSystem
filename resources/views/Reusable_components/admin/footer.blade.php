@@ -10,11 +10,11 @@
         <div class="row" style="font-size:15px;">
             <div class="col-md-3">
                     © 2024 Copyright:
-                <a href="https://rahulvijayam.com/"> Online Rental System</a>
+                <a href="https://kamankhadka.com.np/"> Rent Himalaya</a>
             </div>
             
             <div  id="developedbybtaoteam" class="col-md-9" >
-                 <span class="px-5"> Developed Online Rental System </span>
+                 <span class="px-5"> Developed by Common World</span>
             </div>
         </div>
   
