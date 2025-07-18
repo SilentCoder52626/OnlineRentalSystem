@@ -83,8 +83,8 @@ namespace App\Http\Controllers\Product_Ordering_Controller;
                         $product = Products::where('id',$productId)->first();
                         if($product->quantity < $details['item_quantity'])
                             {
-                                $message = "Not enough product"+$details["item_name"]+" in stock.";
-                                return redirect()->back()->with('warningstatus', $message);
+                                $message = "Not enough product {" . $details["item_name"] . "} in stock. Please reduce the quantity to " . $product->quantity . " or less.";
+                                return redirect()->back()->with('warning_status', $message);
                             }
                         $total += $details['item_price'] * $details['item_quantity'] * $details['days'];
                         $order_details=$order_details.'<br>'.

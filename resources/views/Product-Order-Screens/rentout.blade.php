@@ -183,7 +183,14 @@
   
 </section>
        
-   
+   @if(session('warning_status'))
+  <script>
+    $(document).ready(function () {
+alertify.set('notifier','position','top-center');
+                alertify.warning("{{ session('warning_status') }}");
+    })
+  </script>
+@endif
       
       
    @if ($errors->any())

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ba2b806f793c22623b379ae88256b0f",
+    "content-hash": "be76ff21d040f2e6c6605f386402097c",
     "packages": [
         {
             "name": "brick/math",
@@ -5817,28 +5817,31 @@
     "packages-dev": [
         {
             "name": "beyondcode/laravel-dump-server",
-            "version": "1.9.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/beyondcode/laravel-dump-server.git",
-                "reference": "1f2452617afc64e47b3cf49978beb7beeef084df"
+                "reference": "8e9af58a02a59d6a028167e2afc5b5b1e58eb822"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beyondcode/laravel-dump-server/zipball/1f2452617afc64e47b3cf49978beb7beeef084df",
-                "reference": "1f2452617afc64e47b3cf49978beb7beeef084df",
+                "url": "https://api.github.com/repos/beyondcode/laravel-dump-server/zipball/8e9af58a02a59d6a028167e2afc5b5b1e58eb822",
+                "reference": "8e9af58a02a59d6a028167e2afc5b5b1e58eb822",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0",
-                "illuminate/http": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0",
-                "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "illuminate/console": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/http": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
                 "php": ">=7.2.5",
-                "symfony/var-dumper": "^5.0|^6.0"
+                "symfony/var-dumper": "^5.0|^6.0|^7.0"
+            },
+            "conflict": {
+                "spatie/laravel-ray": "*"
             },
             "require-dev": {
                 "larapack/dd": "^1.0",
-                "phpunit/phpunit": "^7.0|^9.3"
+                "phpunit/phpunit": "^7.0|^9.3|^10.5"
             },
             "type": "library",
             "extra": {
@@ -5876,9 +5879,9 @@
             ],
             "support": {
                 "issues": "https://github.com/beyondcode/laravel-dump-server/issues",
-                "source": "https://github.com/beyondcode/laravel-dump-server/tree/1.9.0"
+                "source": "https://github.com/beyondcode/laravel-dump-server/tree/2.1.0"
             },
-            "time": "2023-02-15T10:29:26+00:00"
+            "time": "2025-02-26T08:27:59+00:00"
         },
         {
             "name": "doctrine/instantiator",

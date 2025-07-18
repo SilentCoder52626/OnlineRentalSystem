@@ -97,7 +97,6 @@ $(document).ready(function () {
                 //window.alert(response.quantity);
                 alertify.set('notifier','position','top-right');
                     
-                    console.log(response);
                 if(response.quantity!=undefined)
                 {
                     $('#msg_diverr2').show();
