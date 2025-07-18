@@ -80,13 +80,19 @@ namespace App\Http\Controllers\Product_Ordering_Controller;
                     {
                         $count=$count +1 ;
                         $productId=$details['item_id'];
+                        $product = Products::where('id',$productId)->first();
+                        if($product->quantity < $details['item_quantity'])
+                            {
+                                $message = "Not enough product"+$details["item_name"]+" in stock.";
+                                return redirect()->back()->with('warningstatus', $message);
+                            }
                         $total += $details['item_price'] * $details['item_quantity'] * $details['days'];
                         $order_details=$order_details.'<br>'.
                         ('Product Name:'.$details["item_name"].', Quantity: '.$details["item_quantity"].
                         '<br> Price:'.$details["item_price"]);
                         $delivery_charges = $delivery_charges + $details['delivery_charges'] ;
                         $date = $details['start_date'] ;
-                        $end_date = $details['end_date'] ;
+                        $end_date = $details['end_date'];
                         $sum = 0;
                         $sum =  $details['deposite_amount']*$details['item_quantity'];
                         $deposite += $sum;
