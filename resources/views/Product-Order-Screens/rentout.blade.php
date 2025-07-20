@@ -64,7 +64,7 @@
              <div id="dynamic_content" class="col-md-12">
                 <div class="col-md-6" id="order_summary"  >
                 
-                        <ul  class="card    p-3"  style=" list-style: none;">
+                        <ul  class="card p-3"  style=" list-style: none;">
                                     
                             @if(session('cart'))
                                 <?php $total=0;$count=0;$delivery_charges=0;$deposite=0 ?>
@@ -75,13 +75,11 @@
 
                                 <?php 
                                 $sum = 0;
-                                  $sum =  $details['deposite_amount']*$details['item_quantity'];
+                                  $sum =  $details['deposite_amount'] * $details['item_quantity'];
                                   $deposite += $sum;
                                   
                                  ?>
-                                
 
-                        
                                 @endforeach
                                 
                                 <li>
@@ -118,11 +116,11 @@
                                             </p>
                                             
                                             <p align="right" >
-                                                {{$details['item_quantity']}} X    {{$details['item_price']}} x  {{$details['days']}}
+                                                {{$details['item_quantity']}} x  {{$details['item_price']}} x {{$details['days']}}
                                                 : {{$details['item_quantity'] *    $details['item_price'] *  $details['days']}}
                                             </p>
 
-                                          <p> 20 % of cost for deposite : <strong style="font-size:20px;font-family: 'Balsamiq Sans', cursive;">रु {{$details['deposite_amount']}} for each</strong> Product Value is {{ $deposite }}</p>
+                                          <p> 20 % of cost for deposit : <strong style="font-size:20px;font-family: 'Balsamiq Sans', cursive;">रु {{$details['deposite_amount']}} for each</strong> Product Value is {{$details['deposite_amount'] * $details['item_quantity']}}</p>
 
 
                                           <?php $delivery_charges = $delivery_charges + $details['delivery_charges'] ?>
@@ -139,7 +137,7 @@
                                             SubTotal: 
                                         </p>
                                         <p align="right" >
-                                            <i class="fas fa-rupee-sign " ></i>  {{$total+$deposite +$delivery_charges}}  
+                                            <i>रु</i>  {{$total+$deposite +$delivery_charges}}  
                                         </p>
                                     
                                        
@@ -149,10 +147,10 @@
 
                                     <li>
                                         <p align="left" style="float:left;">
-                                            Service Charge: 
+                                            Service Charge (15%): 
                                         </p>
                                         <h4 align="right" >
-                                            <i class="fas fa-rupee-sign " ></i>  <strong>
+                                            <i>रु</i>  <strong>
                                             <?php $service_charge = (15 / 100) * $total ?>
                                               {{ ceil($service_charge)     }}</strong> 
                                         </h4>
@@ -163,7 +161,7 @@
                                             Total: 
                                         </p>
                                         <h4 align="right" >
-                                            <i class="fas fa-rupee-sign " ></i>  <strong>
+                                            <i>रु</i>  <strong>
                                               {{ $total +ceil($service_charge) + $deposite + $delivery_charges     }}</strong> 
                                         </h4>
                                     </li>    

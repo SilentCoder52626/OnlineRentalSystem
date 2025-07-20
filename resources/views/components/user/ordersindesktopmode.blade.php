@@ -15,7 +15,7 @@
                                <th>Delivery Address</th>
                                <th>Total Price</th>
                                <th>Actual Cost</th>
-                               <th>Deposite Amount</th>
+                               <th>Deposit Amount</th>
                                <th>Delivery Charge</th>
    
                                 

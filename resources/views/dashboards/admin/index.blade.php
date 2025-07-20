@@ -73,7 +73,7 @@
         
         <div class="col-xl-3 col-md-6">
             <div class="card bg-dark      text-white mb-4">
-                <div class="card-body"> <i class="fas fa-rupee-sign"></i> Transactions</div>
+                <div class="card-body"> <i>रु</i> Transactions</div>
                 <div class="card-footer d-flex align-items-center justify-content-between">
                     <a class="small text-white stretched-link" href="{{url('admin-Transactions')}}">View Details</a>
                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>

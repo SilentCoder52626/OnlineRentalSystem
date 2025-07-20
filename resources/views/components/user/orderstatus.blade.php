@@ -64,7 +64,7 @@ aria-hidden="true">
                                                 </td>
                                       </tr>
                                       <tr>
-                                        <th><i class="fas fa-rupee-sign "></i> Payment Mode:</th>
+                                        <th><i>रु</i> Payment Mode:</th>
                                         <td>{{session('paymentmode')}}</td>
                                       </tr>
                                 
