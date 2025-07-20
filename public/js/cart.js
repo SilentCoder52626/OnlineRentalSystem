@@ -67,7 +67,17 @@ $(document).ready(function () {
             }
         });
     });
+    $('.quantity').on('input', function() {
+        const max = parseInt($(this).attr('max'), 10);
+        const min = parseInt($(this).attr('min'), 0);
+        let value = parseInt($(this).val(), 10);
 
+        if (value > max) {
+        $(this).val(max);
+        } else if (value < min || isNaN(value)) {
+        $(this).val(min);
+        }
+  });
     $('.book-now-btn').click(function (e) {
         
         e.preventDefault()

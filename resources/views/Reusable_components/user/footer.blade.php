@@ -23,6 +23,9 @@
         <p>
           <a href="{{url('about')}}" target="_blank">About Us</a>
         </p>
+       <p>
+          <a href="{{url('Shipping-and-Returns')}}" target="_blank">Shipping and Returns</a>
+        </p>
        
         <!-- <p>
           <a href="{{url('Help')}}" target="_blank">Help</a>
