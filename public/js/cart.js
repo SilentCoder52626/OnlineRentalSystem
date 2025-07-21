@@ -68,7 +68,7 @@ $(document).ready(function () {
         });
     });
     $('.quantity').on('input', function() {
-        const max = parseInt($(this).attr('max'), 10);
+        const max = parseInt($(this).attr('max'), 0);
         const min = parseInt($(this).attr('min'), 0);
         let value = parseInt($(this).val(), 10);
 
