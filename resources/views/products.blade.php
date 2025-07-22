@@ -38,65 +38,36 @@ $Products=App\Models\Products::where('status','=','1')->where('featured',1)->tak
         <p  class="col-md-2" style=" border-bottom: 2px solid #003399;"></p>
     </div>
     @foreach($categories as $category)
-        <h1 class="black-text" style="font-weight:bold;">{{$category->name}}</h1> 
-    <div  class="row my-4 px-4 "  style="width:100%;" >
-        
-        @if(!empty($category->products))
-      @foreach($category->products as $item)
-      <div class="col-md-3 px-4 my-5"  >
-          <a href="{{url('Shop/'.$item->url)}}">
-              <img src=" {{asset('Uploads/Products/'.$item->image1)}}" alt="" class="img-fluid"  >
-              </a>
-          <div class="py-2" style="background:white;">
-            <span class="black-text my-3" style="font-weight:bold; font-family: 'Balsamiq Sans', cursive;">{{$item->name}}</span>
-            <br>
-            Price : ₹ {{$item->price}}<br>
-              <!-- @if($item->rating==1)
-                            <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star "></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                          @elseif($item->rating==2)
-                          <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star "></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                            @elseif($item->rating==3)
-                            <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                          
-                            @elseif($item->rating==4)
-                            <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-                          
-                            @else
-                            <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                            @endif -->
-                             
-                            <br>
-           
-               <a href="Shop/{{$item->url}}" class="btn  btn-primary    "> Book Now</a>
-            
-          </div>
-      </div>  
-      
-     @endforeach
-   
-    </div>
+    <h1 class="text-dark fw-bold text-center mt-5">{{ $category->name }}</h1>
+    <div class="mx-auto mb-4" style="border-bottom: 2px solid #003399; width: 100px;"></div>
+
+    @if(!empty($category->products) && count($category->products))
+        <div class="row my-4 px-4 w-100">
+            @foreach($category->products as $item)
+                <div class="col-md-3 px-3 mb-5">
+                    <a href="{{ url('Shop/' . $item->url) }}" class="text-decoration-none">
+                        <div class="rounded-2 overflow-hidden" style="width: 100%; aspect-ratio: 4/3; background: #f8f9fa;">
+                            <img src="{{ asset('Uploads/Products/' . $item->image1) }}"
+                                 alt="{{ $item->name }}"
+                                 class="img-fluid w-100 h-100"
+                                 style="object-fit: cover;">
+                        </div>
+                    </a>
+                    <div class="py-3 px-2 bg-white text-center shadow-sm rounded-3 mt-2">
+                        <span class="d-block fw-bold" style="font-family: 'Balsamiq Sans', cursive;">
+                            {{ $item->name }}
+                        </span>
+                        <p class="mb-2">Price: रु {{ $item->price }}</p>
+                        <a href="{{ url('Shop/' . $item->url) }}" class="btn btn-primary">Book Now</a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    @else
+        <p class="text-center text-muted mb-5">No products found in this category.</p>
     @endif
-    @endforeach
+@endforeach
+
 
    
     <hr class="col-md-6"> 

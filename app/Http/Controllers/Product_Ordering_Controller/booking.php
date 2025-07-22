@@ -80,12 +80,12 @@ namespace App\Http\Controllers\Product_Ordering_Controller;
                     {
                         $count=$count +1 ;
                         $productId=$details['item_id'];
-                        $product = Products::where('id',$productId)->first();
-                        if($product->quantity < $details['item_quantity'])
-                            {
-                                $message = "Not enough product {" . $details["item_name"] . "} in stock. Please reduce the quantity to " . $product->quantity . " or less.";
-                                return redirect()->back()->with('warning_status', $message);
-                            }
+                        // $product = Products::where('id',$productId)->first();
+                        // if($product->quantity < $details['item_quantity'])
+                        //     {
+                        //         $message = "Not enough product {" . $details["item_name"] . "} in stock. Please reduce the quantity to " . $product->quantity . " or less.";
+                        //         return redirect()->back()->with('warning_status', $message);
+                        //     }
                         $total += $details['item_price'] * $details['item_quantity'] * $details['days'];
                         $order_details=$order_details.'<br>'.
                         ('Product Name:'.$details["item_name"].', Quantity: '.$details["item_quantity"].

@@ -70,59 +70,30 @@ if(Auth()->user()){
     <div align="center">
         <p  class="col-md-2" style=" border-bottom: 2px solid #003399;"></p>
     </div>
-    <div  class="row my-4 px-4 "  style="width:100%;" >
-      @foreach($Products as $item)
-      <div class="col-md-3 px-4 my-5"  >
-          <a href="{{url('Shop/'.$item->url)}}">
-              <img src=" {{asset('Uploads/Products/'.$item->image1)}}" alt="" class="img-fluid"  >
-              </a>
-          <div class="py-2" style="background:white;">
-            <span class="black-text my-3" style="font-weight:bold; font-family: 'Balsamiq Sans', cursive;">{{$item->name}}</span>
-            <br>
-            Price : ₹ {{$item->price}}<br>
-              <!-- @if($item->rating==1)
-                            <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star "></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                          @elseif($item->rating==2)
-                          <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star "></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                            @elseif($item->rating==3)
-                            <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-                              <span class="fa fa-star"></span>
-                          
-                            @elseif($item->rating==4)
-                            <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star"></span>
-                          
-                            @else
-                            <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                              <span class="fa fa-star checked"></span>
-                            @endif -->
-                             
-                            <br>
-           
-               <a href="Shop/{{$item->url}}" class="btn  btn-primary    "> Book Now</a>
-            
-          </div>
-      </div>  
-     @endforeach
-     
-    </div>
+   <div class="row my-4 px-4 w-100">
+    @foreach($Products as $item)
+        <div class="col-md-3 px-3 mb-5">
+            <a href="{{ url('Shop/' . $item->url) }}" class="text-decoration-none">
+                <div style="width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #f8f9fa;" class="rounded-2">
+                    <img src="{{ asset('Uploads/Products/' . $item->image1) }}" 
+                         alt="{{ $item->name }}" 
+                         class="img-fluid w-100 h-100" 
+                         style="object-fit: cover; border-radius: 0.5rem;">
+                </div>
+            </a>
+            <div class="py-3 px-2 bg-white text-center shadow-sm rounded-3 mt-2">
+                <span class="d-block fw-bold" style="font-family: 'Balsamiq Sans', cursive;">
+                    {{ $item->name }}
+                </span>
+                <p class="mb-2">Price: रु {{ $item->price }}</p>
+                <a href="{{ url('Shop/' . $item->url) }}" class="btn btn-primary">
+                    Book Now
+                </a>
+            </div>
+        </div>
+    @endforeach
+</div>
+
 
     <a href="products" class="btn  btn-success    "> View All</a>
    

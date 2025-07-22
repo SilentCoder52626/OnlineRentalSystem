@@ -53,20 +53,24 @@ $Products=App\Models\Products::where('status','=','1')->get();
 <!-- Products Starts Here -->
 <section id="Products" align="center">
   
-    <h1 class="black-text" style="font-weight:bold;">PRODUCTS</h1>
-    <div style=" border-bottom: 2px solid #003399;width:100px;margin-left:45%;"></div>
-    <div  class="row "  >
-      @foreach($Products as $item)
-      <div class="col-md-4 px-5">
-          <img src=" {{asset('public/Uploads/Products/'.$item->image1)}}" alt="" class="img-fluid" >
-          
-            <h2 class="black-text" style="font-weight:bold;">{{$item->name}}</h2>
-            <a href="Shop/{{$item->url}}" class="btn btn-primary">Book Now</a>
-      
-      </div>  
-     @endforeach
+   <h1 class="text-center text-dark fw-bold">PRODUCTS</h1>
+<div class="mx-auto mb-4" style="border-bottom: 2px solid #003399; width: 100px;"></div>
 
-    </div>
+<div class="row justify-content-center">
+    @foreach($Products as $item)
+        <div class="col-md-4 mb-5 d-flex flex-column align-items-center px-4">
+            <div style="width: 100%; aspect-ratio: 4/3; overflow: hidden;">
+                <img src="{{ asset('public/Uploads/Products/' . $item->image1) }}" 
+                     alt="{{ $item->name }}" 
+                     class="img-fluid w-100 h-100" 
+                     style="object-fit: cover;">
+            </div>
+            <h2 class="text-dark fw-bold mt-3 text-center">{{ $item->name }}</h2>
+            <a href="{{ url('Shop/' . $item->url) }}" class="btn btn-primary mt-2">Book Now</a>
+        </div>
+    @endforeach
+</div>
+
    
     <hr class="col-md-6"> 
 </section>

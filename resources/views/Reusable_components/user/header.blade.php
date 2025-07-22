@@ -15,21 +15,24 @@
 </style> 
 <script>
 $(document).ready(function (){
-        $('#SearchIcon').click(function (e)
-        {
-            var searchstring = $('.searchstring').val();
-                // window.alert(searchstring);
-                if(searchstring=='')
-                {
-                    window.location.replace("/");
-                }
-                else
-                {
-                    window.location.replace("/Shop/"+searchstring);   
-                }
-                 
- 
-        });
+        $('#SearchIcon').click(function (e) {
+    var searchstring = $('.searchstring').val();
+    var matchedOption = $('#plists option').filter(function () {
+        return $(this).val() === searchstring;
+    }).first();
+
+    if (searchstring === '' || matchedOption.length === 0) {
+        window.location.replace("/");
+    } else {
+        var productUrl = matchedOption.data('url');
+        if (productUrl) {
+            window.location.replace("/Shop/" + productUrl);
+        } else {
+            // fallback: if user typed something not in the list
+            alert("Product not found.");
+        }
+    }
+});
 });
 </script>
 <!-- ======= Header ======= -->
@@ -43,15 +46,17 @@ $(document).ready(function (){
           </div>
           <div class="col-md-4"  >
               <div class="input-group md-form form-sm  " style="width:100%;">
-                <input class="form-control my-0 py-1 red-border searchstring" list="plists" name="plist" id="plist" type="text" placeholder="Search" aria-label="Search" >
+                <input class="form-control my-0 py-1 red-border searchstring" list="plists" name="plist" id="plist" type="text" placeholder="Search" aria-label="Search">
+
                 <datalist id="plists">
                     @php
-                       $Products=App\Models\Products::where('status','=','1')->get();
+                        $Products = App\Models\Products::where('status', '=', '1')->get();
                     @endphp
-                        @foreach($Products as $item)
-                                <option value="{{$item->url}}">{{$item->name}} </option>
-                        @endforeach
+                    @foreach($Products as $item)
+                        <option value="{{ $item->name }}" data-url="{{ $item->url }}"></option>
+                    @endforeach
                 </datalist>
+
                 
                 <div class="input-group-append" id="SearchIcon">
                     <span class="input-group-text  lighten-3" id="basic-text1"><i class="fas fa-search text-grey"

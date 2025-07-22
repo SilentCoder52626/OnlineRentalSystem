@@ -1,4 +1,34 @@
- 
+ $(document).ready(function () {
+    const $startDate = $('#start_date');
+    const $endDate = $('#end_date');
+
+    // Set min start date as today + 3 days
+    const today = new Date();
+    today.setDate(today.getDate() + 3);
+    const minStartDateStr = today.toISOString().split('T')[0];
+    $startDate.attr('min', minStartDateStr);
+
+    $endDate.prop('disabled', true);
+
+    $startDate.on('change', function () {
+        const startVal = $(this).val();
+
+        if (!startVal) {
+            $endDate.val('');
+            $endDate.prop('disabled', true);
+            $endDate.removeAttr('min');
+            return;
+        }
+
+        $endDate.prop('disabled', false);
+        $endDate.attr('min', startVal);
+
+        if ($endDate.val() && $endDate.val() < startVal) {
+            $endDate.val('');
+        }
+    });
+});
+
 /* Add to Cart, Quantity_Modify, Delete_Cart, Clear_All_Cart_Data Starts Here*/
 $(document).ready(function () {
 
@@ -81,7 +111,12 @@ $(document).ready(function () {
     $('.book-now-btn').click(function (e) {
         
         e.preventDefault()
-
+        e.stopPropagation();    
+            const btn = $(this);
+        if (btn.prop('disabled')) {
+            return;
+        }
+        btn.prop('disabled', true);
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -104,7 +139,6 @@ $(document).ready(function () {
                 'end_date': end_date,
             },
             success: function (response) {
-                //window.alert(response.quantity);
                 alertify.set('notifier','position','top-right');
                     
                 if(response.quantity!=undefined)
@@ -130,7 +164,8 @@ $(document).ready(function () {
                 $('#showloading').html('');
                 setTimeout(function()
                 {
-                  
+                    btn.prop('disabled', false);
+
                     $('#triggererrors').html('');
                     $('#msg_diverr2').hide();
 
