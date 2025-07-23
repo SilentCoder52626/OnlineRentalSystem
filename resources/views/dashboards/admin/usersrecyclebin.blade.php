@@ -71,7 +71,7 @@
             </table>
             <!-- Table  -->
           <!-- Feteching Pagination  Links-->
-          {{ $users->links()}}
+          {{ $users->links('pagination::bootstrap-4')}}
 
         </div>
 

@@ -90,7 +90,7 @@
         <div class="col-md-12">
             <br>
             <p  align="center">
-            {{ $Products->links()}}</p>
+            {{ $Products->links('pagination::bootstrap-4')}}</p>
         </div>
 </div>
    

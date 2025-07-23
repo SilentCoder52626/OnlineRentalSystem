@@ -44,5 +44,9 @@
            </div>
    </div>
 </div>
-</div><br>
-{{ $Orders->links()}}
+ <div class="col-md-12">
+            <br>
+            <p  align="center">
+            {{ $Orders->links('pagination::bootstrap-4')}}</p>
+        </div>
+        </div>

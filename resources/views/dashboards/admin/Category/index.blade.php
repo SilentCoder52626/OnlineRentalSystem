@@ -78,7 +78,7 @@
     <div class="col-md-12">
         <br>
         <p align="center">
-            {{ $categories->links()}}
+            {{ $categories->links('pagination::bootstrap-4')}}
         </p>
     </div>
 </div>

@@ -129,7 +129,7 @@ namespace App\Http\Controllers\Product_Ordering_Controller;
                                 ];
                                 session()->put('cart', $cart);
                                 $products->quantity = $products->quantity - $quantity;
-                                $products>save();
+                                $products->save();
                                 return response()->json(['status'=>'Added to Cart']);
                     }
                 } 

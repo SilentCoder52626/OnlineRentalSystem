@@ -112,6 +112,7 @@ $(document).ready(function () {
         
         e.preventDefault()
         e.stopPropagation();    
+        debugger;
             const btn = $(this);
         if (btn.prop('disabled')) {
             return;
@@ -139,6 +140,7 @@ $(document).ready(function () {
                 'end_date': end_date,
             },
             success: function (response) {
+                debugger;
                 alertify.set('notifier','position','top-right');
                     
                 if(response.quantity!=undefined)

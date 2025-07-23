@@ -86,23 +86,7 @@
 
           @endforeach
 
-          <li>
-            <p align="left" style="float:left;">
-              <strong>
-                Product
-              </strong>
-            </p>
 
-
-
-            <p align="right">
-              <strong>
-                Price
-              </strong>
-            </p>
-
-
-          </li>
           <li>
 
             @foreach(session('cart') as $id => $details)
@@ -119,20 +103,20 @@
                 </div>
                 <div class="text-end">
                   <p class="mb-1">
-                    रु {{ $details['item_quantity'] * $details['item_price'] * $details['days'] }}
+                    रु {{ number_format($details['item_quantity'] * $details['item_price'] * $details['days'], 2) }}
                   </p>
                 </div>
               </div>
               <div class="d-flex justify-content-between align-items-start">
                 <div class="d-flex align-items-center">
                   <div style="margin-left:45px;">
-                    <small>20% Deposit: <strong>रु {{ $details['deposite_amount'] }}</strong> per item</small>
+                    <small>20% Deposit: <strong>रु {{number_format($details['deposite_amount'], 2) }}</strong> per item</small>
 
                   </div>
                 </div>
                 <div class="text-end">
                   <p class="mb-1">
-                    रु {{ $details['deposite_amount'] * $details['item_quantity'] }}
+                    रु {{ number_format($details['deposite_amount'] * $details['item_quantity'], 2) }}
                   </p>
                 </div>
               </div>
@@ -140,51 +124,61 @@
             </div>
             <?php $delivery_charges = $delivery_charges + $details['delivery_charges'] ?>
             @endforeach
-            <p align="left" style="float:left;color:#000066;">
-              Delivery Charges
-            </p>
-            <p align="right" style="color:#000066">
-              <?php echo $delivery_charges ?> /-
-            </p>
+
           </li>
-          <li>
-            <hr>
-            <p align="left" style="float:left;">
-              SubTotal:
-            </p>
-            <p align="right">
-              <i>रु</i> {{$total+$deposite +$delivery_charges}}
-            </p>
+          <ul class="list-unstyled">
+            <li class="pb-2">
+              <div class="row">
+                <div class="col text-left">
+                  Delivery Charges
+                </div>
+                <div class="col text-right">
+                  {{ number_format($delivery_charges, 2) }}
+                </div>
+              </div>
+            </li>
+            <li class="border-top pt-2">
+              <div class="row">
+                <div class="col text-left">
+                  SubTotal:
+                </div>
+                <div class="col text-right">
+                  <i>रु</i> {{number_format($total + $deposite + $delivery_charges, 2) }}
+                </div>
+              </div>
+            </li>
 
+            <li class="pt-2 pb-2">
+              <div class="row">
+                <div class="col text-left">
+                  Service Charge (15%):
+                </div>
+                <div class="col text-right">
+                  <i>रु</i>
+                  <?php $service_charge = (15 / 100) * $total; ?>
+                  {{ number_format(ceil($service_charge), 2) }}
+                </div>
+              </div>
+            </li>
 
+            <li class="border-top mt-2 pt-2 pb-2">
+              <div class="row">
+                <div class="col text-left">
+                  Total:
+                </div>
+                <div class="col text-right">
+                  <i>रु</i>
+                  {{number_format($total + ceil($service_charge) + $deposite + $delivery_charges, 2)}}
+                </div>
+              </div>
+            </li>
 
-            <hr>
-          </li>
+          </ul>
 
-          <li>
-            <p align="left" style="float:left;">
-              Service Charge (15%):
-            </p>
-            <h4 align="right">
-              <i>रु</i> <strong>
-                <?php $service_charge = (15 / 100) * $total ?>
-                {{ ceil($service_charge)     }}</strong>
-            </h4>
-          </li>
-
-          <li>
-            <p align="left" style="float:left;">
-              Total:
-            </p>
-            <h4 align="right">
-              <i>रु</i> <strong>
-                {{ $total +ceil($service_charge) + $deposite + $delivery_charges     }}</strong>
-            </h4>
-          </li>
           @endif
-
-          <button onclick="Continue()" class="btaobtn btaobtn-outline-dark px-2 py-2">Continue</button>
-
+          <div class="text-center">
+            <button onclick="Continue()" class="btaobtn btaobtn-outline-dark px-2 py-2">Continue</button>
+          </div>
         </ul>
 
       </div>
